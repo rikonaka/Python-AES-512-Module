@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+//#include <direct.h> There I want to create a dir named temp, because the code will use it, if there have no dir named temp, the code will return segmention fault
 #include <python2.7/Python.h>
 
 uint8_t gadd(uint8_t a, uint8_t b) {
@@ -396,6 +397,8 @@ static PyObject *aes(PyObject *self, PyObject *args) {
     char *key_1[33];
 
     char *in_1[33];
+    
+    //_mkdir("temp") TODO: mkdir the dir named temp
 
     if(!PyArg_ParseTuple(args, "s|s", &key_1, &in_1)) {
         return NULL;
